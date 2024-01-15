@@ -9,4 +9,4 @@ USER node
 # RUN su node -c "npm install -g <your-package-list -here>"
 
 WORKDIR /app
-ENTRYPOINT [ "sudo", "./run.sh" ]
+ENTRYPOINT [ "./run.sh" ]
