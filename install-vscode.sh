@@ -17,6 +17,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
     rm $dmg_file
 else
     wget -O vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-    sudo apt install ./vscode.deb
+    sudo apt install -y --no-install-recommends ./vscode.deb
     rm ./vscode.deb
 fi
