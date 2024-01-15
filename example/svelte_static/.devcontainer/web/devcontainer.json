@@ -1,0 +1,7 @@
+{
+  "dockerComposeFile": "../../docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/workspace/web",
+  // "postCreateCommand": "sudo chown -R 1000:1000 /workspace",
+  "postAttachCommand": "tail -f /workspace/local/npm_run_dev.log"
+}

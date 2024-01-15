@@ -8,8 +8,6 @@ fi
 from=$1
 to=$2
 killall --user $from
-sudo usermod -l $to $from
-#groupmod --new-name $to $from
-#usermod --move-home --home /home/$to --login $to $from
-#usermod --append --groups users $to
-#loginctl enable-linger $to
+groupmod --new-name $to $from
+usermod --move-home --home /home/$to --login $to $from
+usermod --append --groups users $to
