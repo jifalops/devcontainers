@@ -2,12 +2,8 @@
   "dockerComposeFile": "../../docker-compose.yml",
   "service": "web",
   "workspaceFolder": "/workspace/web",
+  // This may need to be used on first run.
   // "postCreateCommand": "sudo chown -R 1000:1000 /workspace",
-  "overrideCommand": true,
-  // "postStartCommand": "npm install && npm run dev -- --host",
-  // "postStartCommand": "/workspace/web/run.sh",
-  // "postStartCommand": "nohub bash -c '/workspace/web/run.sh &'",
-  // "postAttachCommand": "tail -f /workspace/local/npm_run_dev.log",
   "customizations": {
     "vscode": {
       "extensions": [
