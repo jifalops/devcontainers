@@ -6,9 +6,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/typescript-node
 
 RUN passwd --delete node
 
-# Svelte
-EXPOSE 5173
-
 USER node
 WORKDIR /workspace/web
-ENTRYPOINT [ "./run.sh" ]
+CMD [ "./run.sh" ]

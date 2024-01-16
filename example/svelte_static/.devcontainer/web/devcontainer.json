@@ -3,5 +3,19 @@
   "service": "web",
   "workspaceFolder": "/workspace/web",
   // "postCreateCommand": "sudo chown -R 1000:1000 /workspace",
-  "postAttachCommand": "tail -f /workspace/local/npm_run_dev.log"
+  "overrideCommand": true,
+  // "postStartCommand": "npm install && npm run dev -- --host",
+  // "postStartCommand": "/workspace/web/run.sh",
+  // "postStartCommand": "nohub bash -c '/workspace/web/run.sh &'",
+  // "postAttachCommand": "tail -f /workspace/local/npm_run_dev.log",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "svelte.svelte-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
 }

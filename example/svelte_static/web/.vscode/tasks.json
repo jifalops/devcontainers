@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "bash",
+      "type": "shell",
+      "command": "bash",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "none",
+      "presentation": {
+        "group": "dev",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "npm run dev",
+      "type": "shell",
+      "command": "sleep 2 && npm run dev -- --host",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "group": "dev",
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+    },
+  ]
+}

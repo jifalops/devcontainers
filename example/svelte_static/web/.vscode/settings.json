@@ -1,0 +1,5 @@
+{
+  "terminalLoader.config": {
+    "directory": ".vscode",
+  }
+}
