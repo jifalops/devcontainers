@@ -86,7 +86,7 @@ def install_package(file_path, os_name):
         elif os_name == 'darwin':
             subprocess.run(['hdiutil', 'attach', file_path], check=True)
             subprocess.run(
-                ['cp', '-R', f"/Volumes/{os.path.basename(file_path, '.dmg')}/VS Code.app", '/Applications/'], check=True)
+                ['cp', '-R', f"/Volumes/{os.path.basename(file_path, '.dmg')}/*.app", '/Applications/'], check=True)
             subprocess.run(['hdiutil', 'detach', file_path], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Installation failed: {e}", file=sys.stderr)
