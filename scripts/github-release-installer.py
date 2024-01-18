@@ -3,7 +3,6 @@ import platform
 import subprocess
 import os
 import sys
-from urllib.parse import urlparse
 from requests.exceptions import RequestException
 
 
@@ -105,7 +104,8 @@ def main():
     file_path = download_file(asset['browser_download_url'], asset['name'])
     install_package(file_path, os_name)
     cleanup(file_path)
-    print(f"Successfully installed {asset['name']} from {user_repo}")
+    print(
+        f"Successfully installed {asset['name']} from https://github.com/{user_repo}/releases/latest")
 
 
 if __name__ == "__main__":
