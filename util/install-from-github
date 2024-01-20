@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <user/repo>"
+  exit 1
+fi
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+pushd "$script_dir/.install-github-release" > /dev/null
+pip install -r requirements.txt > /dev/null
+python install-github-release.py "$@"
+popd > /dev/null

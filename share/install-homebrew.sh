@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install -y --no-install-recommends build-essential
+sudo apt-get install -y --no-install-recommends build-essential
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Update current shell

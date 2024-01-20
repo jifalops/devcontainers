@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Checking for up-to-date local branches that have been removed on the remote..."
+if ! git-removed-branches --prune $@; then
+  echo "Run 'git-removed-branches --prune --force' to force delete."
+fi

@@ -8,7 +8,7 @@ from requests.exceptions import RequestException
 
 def parse_argument():
     if len(sys.argv) != 2:
-        print("Usage: python script.py user/repo", file=sys.stderr)
+        print("Usage: python install-github-release.py user/repo", file=sys.stderr)
         sys.exit(1)
     return sys.argv[1]
 
