@@ -23,8 +23,24 @@ Many will also work on MacOS, but `install-*` scripts in particular may result i
 
 These are not required but are assumed to be present.
 
-- git as the SCM
-- VS Code as the editor
+- git
+- vscode
+
+## Package Managers
+
+Hosts tend to use an abundance mentality, while containers are more minimalist.
+
+0. APT (`apt-get`) is assumed to be built in for many of the `install-*` scripts.
+1. Homebrew
+2. npm (via nvm) and Yarn
+3. pip (via venv at ~/.venv, python3-venv from apt)
+4. Go Modules (via go)
+5. gem Rubygems (via apt)
+6. pub dart (via flutter sdk, includes dart sdk)
+7. conda
+8. cargo Rust (via rustup)
+9. gradle (via brew)
+10. composer PHP (via apt)
 
 <!-- ## Conventions
 
