@@ -32,7 +32,7 @@ Hosts tend to use an abundance mentality, while containers are more minimalist.
 
 0. APT (`apt-get`) is assumed to be built in for many of the `install-*` scripts.
 1. Homebrew
-2. npm (via nvm) and Yarn
+2. npm (via nvm), with yarn and pnpm
 3. pip (via venv at ~/.venv, python3-venv from apt)
 4. Go Modules (via go)
 5. gem Rubygems (via apt)
