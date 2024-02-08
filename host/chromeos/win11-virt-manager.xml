@@ -46,7 +46,9 @@
     <vmport state="off"/>
     <smm state="on"/>
   </features>
-  <cpu mode="host-passthrough" check="none" migratable="on"/>
+  <cpu mode="host-passthrough" check="none" migratable="on">
+    <feature policy="disable" name="amd-stibp"/>
+  </cpu>
   <clock offset="localtime">
     <timer name="rtc" present="no" tickpolicy="catchup"/>
     <timer name="pit" present="no" tickpolicy="delay"/>
@@ -72,7 +74,7 @@
     </disk>
     <disk type="file" device="cdrom">
       <driver name="qemu" type="raw"/>
-      <source file="/home/jacob/Downloads/Win11_23H2_English_x64v2.iso"/>
+      <source file="/home/jacob/Win11_23H2_English_x64v2.iso"/>
       <target dev="sdb" bus="sata"/>
       <readonly/>
       <boot order="1"/>
@@ -80,7 +82,7 @@
     </disk>
     <disk type="file" device="cdrom">
       <driver name="qemu" type="raw"/>
-      <source file="/home/jacob/Downloads/virtio-win-0.1.240.iso"/>
+      <source file="/home/jacob/virtio-win-0.1.240.iso"/>
       <target dev="sdc" bus="sata"/>
       <readonly/>
       <address type="drive" controller="0" bus="0" target="0" unit="2"/>
