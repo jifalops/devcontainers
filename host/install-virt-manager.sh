@@ -13,3 +13,6 @@ sudo su "$USER"
 
 # Use this guide to setup Windows 11 on a chromebook:
 # https://www.reddit.com/r/ChromeOSFlex/comments/ucno4b/comment/i6cviv8
+
+sudo mkdir /var/lib/swtpm-localca &> /dev/null
+sudo chown -R tss:root /var/lib/swtpm-localca
