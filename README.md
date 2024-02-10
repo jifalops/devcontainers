@@ -1,4 +1,4 @@
-# Development Machine Snippets
+# Development Environment Setup Snippets
 
 Scripts for setting up a development machine or container.
 
@@ -41,6 +41,8 @@ Hosts tend to use an abundance mentality, while containers are more minimalist.
 8. cargo Rust (via rustup)
 9. gradle (via brew)
 10. composer PHP (via apt)
+
+https://chat.openai.com/c/55e78f3d-2d96-4887-8abc-f802fd1d23dd
 
 <!-- ## Conventions
 
