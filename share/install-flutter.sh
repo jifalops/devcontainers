@@ -1,13 +1,10 @@
-sudo apt-get install -y --no-install-recommends clang cmake ninja-build pkg-config libgtk-3-dev
+# https://docs.flutter.dev/get-started/install/linux#linux-setup
+sudo apt-get install -y --no-install-recommends clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 if [ -d "$HOME/flutter" ]; then
   echo "Flutter is already installed"
   exit 1
 fi
 git clone https://github.com/flutter/flutter.git -b stable $HOME/flutter
-
-
-# Update current shell
-export PATH="$HOME/.pub-cache/bin:$HOME/flutter/bin:$PATH"
 
 # Add to .bashrc
 cat << EOF >> "$HOME/.bashrc"

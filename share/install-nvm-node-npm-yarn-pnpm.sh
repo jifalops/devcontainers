@@ -9,12 +9,10 @@ if [ -n "$NVM_DIR" ]; then
   fi
 fi
 
-version="$($script_dir/../util/get-latest-github-release-tag nvm-sh/nvm)"
-echo "Installing nvm $version"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$version/install.sh | bash \
-  && export NVM_DIR="$HOME/.nvm" \
-  && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
-  && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" \
-  && nvm install node
-source "$HOME/.bashrc"
-npm i -g yarn pnpm
+# Install npm via nvm.
+# https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash &&\
+  export NVM_DIR="$HOME/.nvm" &&\
+  . "$NVM_DIR/nvm.sh" &&\
+  nvm install node &&\
+  npm install -g npm yarn pnpm
