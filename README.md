@@ -1,32 +1,25 @@
-# Development Environment Setup Snippets
+# Devcontainers
 
-Scripts for setting up a development machine or container.
+Images and scripts for setting up development environments on a host or in a container.
 
-## Overview
+## Scripts
 
-| Type         | Focus                                                                     | Directory   |
-| ------------ | ------------------------------------------------------------------------- | ----------- |
-| Machine/Host | Install Docker, package managers, and an editor.                          | `host`      |
-| Container    | `sudo` without a password, shell history, use [devcontainer][2]s.         | `container` |
-| Both         | Based off of [Buildpack Deps][1] and have a nice shell environment setup. | `share`     |
+| Type         | Focus                                                                     |
+| ------------ | ------------------------------------------------------------------------- |
+| Machine/Host | Install Docker, package managers, and an editor.                          |
+| Container    | `sudo` without a password, shell history, use [devcontainer][2]s.         |
+| Both         | Based off of [Buildpack Deps][1] and have a nice shell environment setup. |
 
 The `util` directory contains scripts that are used by the other scripts, and some that are just intended for use by the user.
 
-## Assumptions
+### Assumptions
 
-### Platform
+#### Platform
 
 Hosts and containers are Debian based. It is assumed they also work on Ubuntu and WSL (Windows Subsystem for Linux).
 Many will also work on MacOS, but `install-*` scripts in particular may result in unexpected behavior.
 
-### Other
-
-These are not required but are assumed to be present.
-
-- git
-- vscode
-
-## Package Managers
+### Package Managers
 
 Hosts tend to use an abundance mentality, while containers are more minimalist.
 
@@ -40,17 +33,6 @@ Hosts tend to use an abundance mentality, while containers are more minimalist.
 7. conda
 8. cargo Rust (via rustup)
 9. gradle (via brew)
-10. composer PHP (via apt)
-
-https://chat.openai.com/c/55e78f3d-2d96-4887-8abc-f802fd1d23dd
-
-<!-- ## Conventions
-
-- `/local` holds all the private settings and files that are not checked into source control.
-  - `/local.default` holds the default settings and files that are checked into source control.
-  - .bash_history is linked to
-
-### Project Structure -->
 
 [1]: https://github.com/docker-library/buildpack-deps/tree/master/debian/bookworm
 [2]: https://container.dev
