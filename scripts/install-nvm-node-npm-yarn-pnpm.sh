@@ -11,8 +11,8 @@ fi
 
 # Install npm via nvm.
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash &&\
-  export NVM_DIR="$HOME/.nvm" &&\
-  . "$NVM_DIR/nvm.sh" &&\
-  nvm install node &&\
-  npm install -g npm yarn pnpm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+. ~/.bashrc
+. $NVM_DIR/nvm.sh
+nvm install node
+npm install -g npm yarn pnpm
