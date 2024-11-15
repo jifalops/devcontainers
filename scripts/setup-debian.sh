@@ -17,7 +17,10 @@ pushd "$SCRIPT_DIR" > /dev/null
 ./install-java-maven-gradle.sh
 
 # Tools
+./install-zsh-fish.sh
 ./install-nano.sh
+./install-git-transcrypt.sh
+./install-trash-cli.sh
 ./install-github-cli.sh
 ./install-docker.sh
 ./install-vscode.sh
