@@ -1,6 +1,6 @@
-# https://github.com/devcontainers/images/blob/main/src/rust/.devcontainer/Dockerfile
-ARG VARIANT="bookworm"
-FROM mcr.microsoft.com/devcontainers/rust:${VARIANT}
+# https://github.com/devcontainers/images/tree/main/src/python/.devcontainer
+ARG VARIANT=3-bookworm
+FROM mcr.microsoft.com/devcontainers/python:${VARIANT}
 
 # Install additional packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends \
@@ -20,19 +20,14 @@ RUN groupmod --new-name $USERNAME vscode &&\
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-# Install additional Rust tools and completions
-RUN rustup component add llvm-tools-preview &&\
-  cargo install cargo-msrv cargo-sort cargo-llvm-cov cargo-nextest cargo-watch &&\
-  mkdir -p ~/.local/share/bash-completion/completions &&\
-  rustup completions bash > ~/.local/share/bash-completion/completions/rustup &&\
-  rustup completions bash cargo > ~/.local/share/bash-completion/completions/cargo
-
 # Set up a python environment for the user.
 # This gives the user their own "global but isolated" environment for pip and supports ad-hoc python usage.
 RUN python3 -m venv ~/.venv &&\
   echo 'PATH="$HOME/.venv/bin:$PATH"' >> ~/.bashrc
 
-# Setup Python poetry
+# Use pipx to install command line utilities.
 RUN pipx install poetry &&\
+  pipx install uvicorn &&\
+  pipx install isort &&\
   echo 'PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc &&\
-  ~/.local/bin/poetry config virtualenvs.in-project true
+  bash -ic 'poetry config virtualenvs.in-project true'
