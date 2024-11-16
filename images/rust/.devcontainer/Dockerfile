@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/devcontainers/rust:${VARIANT}
 
 # Install additional packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -y --no-install-recommends \
-  bash-completion protobuf-compiler python3-venv
+  bash-completion python3-venv pipx nano
 
 # Rename the 'vscode' user.
 # https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user#_creating-a-nonroot-user
@@ -23,15 +23,16 @@ WORKDIR /home/$USERNAME
 
 # Install additional Rust tools and completions
 RUN rustup component add llvm-tools-preview &&\
-  cargo install cargo-msrv cargo-sort cargo-llvm-cov cargo-nextest &&\
+  cargo install cargo-msrv cargo-sort cargo-llvm-cov cargo-nextest cargo-watch &&\
   mkdir -p ~/.local/share/bash-completion/completions &&\
   rustup completions bash > ~/.local/share/bash-completion/completions/rustup &&\
   rustup completions bash cargo > ~/.local/share/bash-completion/completions/cargo
 
-# Install git completion for bash.
-RUN curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" -o "$HOME/.git-completion.bash" &&\
-  echo 'source "$HOME/.git-completion.bash"' >> ~/.bashrc
-
 # Setup a python virtual environment in the home directory to avoid breaking system packages with pip.
 RUN python3 -m venv ~/.venv &&\
   echo 'PATH="$HOME/.venv/bin:$PATH"' >> ~/.bashrc
+
+# Setup Python poetry
+RUN pipx install poetry &&\
+  echo 'PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc &&\
+  ~/.local/bin/poetry config virtualenvs.in-project true

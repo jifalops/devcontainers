@@ -3,14 +3,14 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-pushd "$SCRIPT_DIR" > /dev/null
+pushd "$SCRIPT_DIR/.." > /dev/null
 
 # Base
 ./install-buildpack-deps.sh
+./install-bash-completion.sh
 
 # Languages and Package Managers
-./setup-python-venv-for-user.sh
-./install-python3-poetry.sh
+./setup-python.sh
 ./install-nvm-node-npm-yarn-pnpm.sh
 ./install-go.sh
 ./install-cargo-rust.sh

@@ -4,9 +4,6 @@ wget "$url" -O miniconda.sh
 bash miniconda.sh -b -p "$HOME/miniconda"
 rm miniconda.sh
 
-# Update current shell
-export PATH="$HOME/miniconda/bin:$PATH"
-
 # Add to .bashrc
 cat << EOF >> "$HOME/.bashrc"
 if [ -d "\$HOME/miniconda/bin" ]; then

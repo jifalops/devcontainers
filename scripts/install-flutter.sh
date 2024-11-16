@@ -8,11 +8,11 @@ sudo apt-get install -y --no-install-recommends curl git unzip xz-utils zip libg
 git clone https://github.com/flutter/flutter.git -b stable $HOME/flutter
 
 # Add to .bashrc
-# cat << EOF >> "$HOME/.bashrc"
-# if [ -d "\$HOME/flutter/bin" ]; then
-#   export PATH="\$HOME/flutter/bin:\$PATH"
-# fi
-# if [ -d "\$HOME/.pub-cache/bin" ]; then
-#   export PATH="\$HOME/.pub-cache/bin:\$PATH"
-# fi
-# EOF
+cat << EOF >> "$HOME/.bashrc"
+if [ -d "\$HOME/flutter/bin" ]; then
+  export PATH="\$HOME/flutter/bin:\$PATH"
+fi
+if [ -d "\$HOME/.pub-cache/bin" ]; then
+  export PATH="\$HOME/.pub-cache/bin:\$PATH"
+fi
+EOF

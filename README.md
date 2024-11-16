@@ -1,38 +1,35 @@
-# Devcontainers
+# Development Containers (devcontainers)
 
-Images and scripts for setting up development environments on a host or in a container.
+Images and scripts<!--, and [features][3] --> for setting up development environments on a host or in a container.
+
+Inspired by [containers.dev][1] and [github.com/devcontainers/images][2].
+
+## Images
+
+Docker images for particular languages or technology combinations.
+
+- Based on [devcontainers/images][2] with additional tools and [features][3] like bash completion.
+- Have a user named `developer` that can sudo without a password.
+- Published to Docker Hub for easy use.
+- Include a working python and node environment (pip/x, npm, etc.) for easily adding command line tools.
+- Include the Github CLI for easy access to repositories.
 
 ## Scripts
 
-| Type         | Focus                                                                     |
-| ------------ | ------------------------------------------------------------------------- |
-| Machine/Host | Install Docker, package managers, and an editor.                          |
-| Container    | `sudo` without a password, shell history, use [devcontainer][2]s.         |
-| Both         | Based off of [Buildpack Deps][1] and have a nice shell environment setup. |
+Scripts can be run on a host or in a container to setup a development environment one piece at a time.
 
-The `util` directory contains scripts that are used by the other scripts, and some that are just intended for use by the user.
+They are headless and install the latest version of tools (or latest LTS version).
 
-### Assumptions
+### Script Compatibility
 
-#### Platform
+While some are cross platform, most scripts use `apt-get` and are intended for Debian based Linux distributions.
 
-Hosts and containers are Debian based. It is assumed they also work on Ubuntu and WSL (Windows Subsystem for Linux).
-Many will also work on MacOS, but `install-*` scripts in particular may result in unexpected behavior.
+<!-- ## Features
 
-### Package Managers
+## Template Repositories
 
-Hosts tend to use an abundance mentality, while containers are more minimalist.
+Template repositories are a starting point for new projects that use the images in this repo. -->
 
-0. APT (`apt-get`) is assumed to be built in for many of the `install-*` scripts.
-1. Homebrew
-2. npm (via nvm), with yarn and pnpm
-3. pip (via venv at ~/.venv, python3-venv from apt)
-4. Go Modules (via go)
-5. gem Rubygems (via apt)
-6. pub dart (via flutter sdk, includes dart sdk)
-7. conda
-8. cargo Rust (via rustup)
-9. gradle (via brew)
-
-[1]: https://github.com/docker-library/buildpack-deps/tree/master/debian/bookworm
-[2]: https://container.dev
+[1]: https://containers.dev
+[2]: https://github.com/devcontainers/images/tree/main/src
+[3]: https://containers.dev/features
