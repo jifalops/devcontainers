@@ -24,12 +24,15 @@ They are headless and install the latest version of tools (or latest LTS version
 
 While some are cross platform, most scripts use `apt-get` and are intended for Debian based Linux distributions.
 
-<!-- ## Features
+<!-- ## Features -->
 
 ## Template Repositories
 
-Template repositories are a starting point for new projects that use the images in this repo. -->
+Template repositories are a starting point for new projects that use the images in this repo.
+
+1. [`jifalops/svelte-static`][4] - A fully-featured container for a delightfully modern experience building a web client or static site.
 
 [1]: https://containers.dev
 [2]: https://github.com/devcontainers/images/tree/main/src
 [3]: https://containers.dev/features
+[4]: https://github.com/jifalops/svelte-static
