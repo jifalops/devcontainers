@@ -27,6 +27,7 @@ RUN python3 -m venv ~/.venv &&\
 
 # Use pipx to install command line utilities.
 RUN pipx install poetry &&\
+  pipx inject poetry poetry-plugin-export &&\
   pipx install uvicorn &&\
   pipx install isort &&\
   echo 'PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc &&\
