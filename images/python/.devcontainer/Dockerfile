@@ -29,6 +29,7 @@ RUN python3 -m venv ~/.venv &&\
 RUN pipx install poetry &&\
   pipx inject poetry poetry-plugin-export &&\
   pipx install uvicorn &&\
+  pipx install gunicorn &&\
   pipx install isort &&\
   echo 'PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc &&\
   bash -ic 'poetry config virtualenvs.in-project true'
